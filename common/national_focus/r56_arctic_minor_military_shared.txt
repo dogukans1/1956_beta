@@ -1,50 +1,6 @@
 #
 # Tree originally designed for minor countries around the arctic circle (what about you Greenland?)
 #Edit for Rt56 by Thinking_Waffle#
-#	shared_focus = {
-#		id = GEN_
-#		icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#		
-#		bypass = {
-#
-#		}
-#
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#
-#		complete_tooltip = {
-#
-#		}
-#
-#		completion_reward = {
-#
-#		}
-#	}
-
-### search_filters = {FOCUS_FILTER_POLITICAL}
-### search_filters = {FOCUS_FILTER_RESEARCH}
-### search_filters = {FOCUS_FILTER_INDUSTRY}
-### search_filters = {FOCUS_FILTER_STABILITY}
-### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
-### search_filters = {FOCUS_FILTER_MANPOWER}
-### search_filters = {FOCUS_FILTER_ANNEXATION}
-
 
 shared_focus = {
 	id = ARCTIC_sharpshooting_tradition
@@ -125,7 +81,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = ARCTIC_start_them_young
-	icon = GFX_goal_manpower
+	icon = GFX_focus_SWE_Sami_reconcilliation
 
 	prerequisite = { focus = ARCTIC_sharpshooting_tradition }
 	relative_position_id = ARCTIC_sharpshooting_tradition
@@ -149,6 +105,7 @@ shared_focus = {
 		add_ideas = military_youth_focus
 	}
 }
+
 shared_focus = {
 	id = ARCTIC_recruit_penguins
 	icon = GFX_goal_generic_penguin
@@ -246,16 +203,114 @@ shared_focus = {
 					naval_invader
 				}
 			}
-			if = {
-				limit = {
-					has_dlc = "Waking the Tiger"
-				}
-				add_max_trait = 1	
-			}
+			add_max_trait = 1
 					
 		}
 	}
 }
+
+shared_focus = {
+	id = ARCTIC_the_day_before_the_storm_hit #reference to "Badly Translated Hearts of Iron IV is Cursed"
+	icon = GFX_focus_attack_china
+	prerequisite = { focus = ARCTIC_dissent_in_the_party }
+	x = 1
+	y = 1
+	relative_position_id = ARCTIC_dissent_in_the_party
+	cost = 10
+	ai_will_do = {
+		base = 0
+	}
+
+	allow_branch = {
+
+	}
+
+	search_filters = { FOCUS_FILTER_ANNEXATION }
+	completion_reward = {
+
+		add_war_support = 0.15
+		add_manpower = 40000
+
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = SIK
+					is_core_of = XSM
+					is_core_of = MON
+					is_core_of = MEN
+					is_core_of = TAN
+					is_core_of = TNG
+				}
+			}
+			add_claim_by = TUR
+		}
+		if = { 
+			limit = {
+				SIK = { exists = yes }
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = SIK
+			}
+		}
+		if = { 
+			limit = {
+				XSM = { exists = yes }
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = XSM
+			}
+		}
+		if = { 
+			limit = {
+				MON = { exists = yes }
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MON
+			}
+		}
+		if = { 
+			limit = {
+				MEN = { exists = yes }
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MEN
+			}
+		}
+		if = { 
+			limit = {
+				TAN = { exists = yes }
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TAN
+			}
+		}
+		if = { 
+			limit = {
+				TNG = { exists = yes }
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TNG
+			}
+		}
+		if = { 
+			limit = {
+				SHX = { controls_state = 621 }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				generator = { 621 }
+				target = SHX
+			}
+		}
+	}
+}
+
 
 
 
@@ -334,7 +389,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = ARCTIC_winter_training
-	icon = GFX_goal_generic_military_sphere
+	icon = GFX_goal_generic_cold_war
 	prerequisite = { focus = ARCTIC_sharpshooting_tradition}
 	relative_position_id = ARCTIC_sharpshooting_tradition
 	x = -1
@@ -368,7 +423,7 @@ shared_focus = {
 
 shared_focus = {
 	id = ARCTIC_winter_readiness
-	icon = GFX_goal_generic_cold_war
+	icon = GFX_focus_generic_winter_warfare
 	prerequisite = { focus = ARCTIC_winter_training }
 	prerequisite = { focus = ARCTIC_establish_a_general_staff }
 	x = 0
@@ -390,7 +445,50 @@ shared_focus = {
 			add_logistics = 1
 		}			
 		add_ideas = ARCTIC_winter_readiness
-			
+
+		custom_effect_tooltip = FIN_winter_warfare_battalion_tt #tells the player about the new support unit
+
+		hidden_effect = { 
+			set_technology = {
+				winter_logistics_support_tech = 1
+				popup = no
+			}
+		}		
+
+	}
+}
+shared_focus = {
+	id = ARCTIC_sami_pathfinders
+	text = FIN_sami_pathfinders
+	icon = GFX_focus_FIN_utilize_the_sami
+
+	prerequisite = { focus = ARCTIC_winter_readiness }
+	relative_position_id = ARCTIC_winter_readiness
+	x = 0
+	y = 1	
+	cost = 10
+
+	ai_will_do = {
+		factor = 30
+	}
+
+	allow_branch = {
+		original_tag = SMI
+	}
+
+
+	search_filters = { FOCUS_FILTER_HISTORICAL }
+
+	completion_reward = {
+
+		add_ideas = FIN_sami_pathfinders
+
+		hidden_effect = {
+			set_technology = {
+				sami_pathfinders_tech = 1
+				popup = no
+			}
+		}
 	}
 }
 shared_focus = {

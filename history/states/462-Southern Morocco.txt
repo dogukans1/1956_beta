@@ -6,10 +6,15 @@ state={
 	
 	state_category = wasteland
 
+	resources = {
+		chromium = 4
+	}
+
 	history={
 		owner = FRA
 		buildings = {
 			infrastructure = 1
+			air_base = 1
 		}
 		victory_points = {
 			4108 5

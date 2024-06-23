@@ -24,7 +24,7 @@ recruit_character = IRQ_ali_ben_jawad
 recruit_character = IRQ_bakr_sidqi
 recruit_character = IRQ_abdullah
 recruit_character = IRQ_zeid_bin_hussein
-recruit_character = IRQ_ali_abn_hussein
+recruit_character = IRQ_abdulilah_bin_ali
 recruit_character = IRQ_nuri_as_said
 recruit_character = IRQ_faisal_ii
 recruit_character = IRQ_abdul_al_karim_qasim
@@ -119,10 +119,18 @@ set_party_name = {
     name = "Al-Murabba al-Dhahabī" 
 }
 
-country_event = {	#moved from on_startup
+# Some historical events
+
+country_event = {	# Golden Square Coup
 	id = iraq_hist.1
-	days = 1552
+	days = 1948
 }
+
+country_event = { # Death of Ghazi I
+	id = irq.26
+	days = 1189
+}
+
 
 #create_country_leader = {
 #	name = "Ghazi I"

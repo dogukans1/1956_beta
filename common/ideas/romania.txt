@@ -25,7 +25,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_factor = -0.15
 				min_export = -0.05
 				trade_cost_for_target_factor = -0.25
 			}
@@ -367,7 +367,7 @@ ideas = {
 			}
 
 			modifier = {
-				consumer_goods_factor = 0.2
+				consumer_goods_factor = 0.45
 			}
 		}
 
@@ -424,7 +424,7 @@ ideas = {
 			}
 
 			modifier = {
-				consumer_goods_factor = 0.03
+				consumer_goods_factor = 0.12
 			}
 		}
 
@@ -526,7 +526,7 @@ ideas = {
 			}
 			
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_factor = 0.3
 				political_power_gain = -0.25
 			}
 		}
@@ -693,7 +693,7 @@ ideas = {
 			}
 			
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_factor = -0.15
 			}
 		}
 
@@ -911,7 +911,7 @@ ideas = {
 			}
 			
 			equipment_bonus = {
-				heavy_cruiser = { #If you change this - Change the custom tooltip too: ROM_coastal_defense_ships_tech_tt
+				capital_ship = { #If you change this - Change the custom tooltip too: ROM_coastal_defense_ships_tech_tt
 					armor_value = 0.2
 					lg_attack = 0.1
 					build_cost_ic = -0.1
@@ -1021,7 +1021,6 @@ ideas = {
 			
 			allowed = {
 				original_tag = ROM
-				has_dlc = "Death or Dishonor"
 			}
 			
 			research_bonus = {
@@ -1262,7 +1261,6 @@ ideas = {
 
 			allowed = {
 				original_TAG = ROM
-				has_dlc = "Death or Dishonor"
 			}
 			cost = 75
 
@@ -1295,7 +1293,6 @@ ideas = {
 
 			allowed = {
 				original_TAG = ROM
-				has_dlc = "Death or Dishonor"
 			}
 			
 
@@ -1392,7 +1389,6 @@ ideas = {
 
 			allowed = {
 				original_tag = ROM
-				has_dlc = "Death or Dishonor"
 			}
 
 			available = {
@@ -1419,53 +1415,19 @@ ideas = {
 	aircraft_manufacturer = { 		
 			
 		designer = yes
-		
-		iar = {
-			
-			picture = generic_air_manufacturer_2
-
-			cost = 150
-
-			allowed = {
-				original_tag = ROM
-				NOT = {
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			
-			research_bonus = {
-				air_equipment = 0.15
-			}
-			
-			traits = { light_aircraft_manufacturer }
-			
-			equipment_bonus = {
-				# produced the IAR-80 fighter/ground attack aircraft around 350 of them during 36-44
-			}
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
 
 		ROM_iar = {
 			
 			picture = generic_air_manufacturer_2
 
 			available = {
-				if = {
-					limit = {
-						has_dlc = "Death or Dishonor"
-					}
-					has_completed_focus = ROM_invest_in_the_iar
-				}
+				has_completed_focus = ROM_invest_in_the_iar
 			}
 
 			cost = 50
 
 			allowed = {
 				original_tag = ROM
-				has_dlc = "Death or Dishonor"
 			}
 			
 			research_bonus = {

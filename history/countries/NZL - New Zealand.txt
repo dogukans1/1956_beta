@@ -87,6 +87,7 @@ if = {
 if = {
 	limit = {
 		has_dlc = "La Resistance"
+		NZL = { is_ai = no }
 	}
 	set_technology = {
 		armored_car1 = 1
@@ -158,17 +159,6 @@ set_party_name = {
 #	ideology = socialism
 #	traits = {
 #		sick
-#	}
-#}
-
-#create_country_leader = {
-#	name = "Cyril Louis Newall"
-#	desc = "POLITICS_Cyril_Louis_Newall"
-#	picture = "gfx/leaders/NZL/r56_portrait_NZL_Cyril_Louis_Newall.dds"
-#	expire = "1965.1.1"
-#	ideology = despotism
-#	traits = {
-#
 #	}
 #}
 

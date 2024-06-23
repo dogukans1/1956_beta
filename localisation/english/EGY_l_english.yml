@@ -427,7 +427,7 @@
  EGY_sudanese_volunteers_desc:0 "We must recognize that in order to have a strong and effective military, it must embrace diversity and inclusivity among its soldiers. By desegregating the armed forces and allowing [EGY.GetAdjective] and [SUD.GetAdjective] soldiers to serve together, we can promote mutual understanding, respect and create a stronger and more cohesive force."
  EGY_modernize_our_weaponary:0 "Modernize our Weaponary"
  EGY_modernize_our_weaponary_desc:0 "We see the need to keep up with the rapidly changing technology in the field of weaponry. By modernizing our armaments, we will be able to better defend our nation and project our power in the region. This focus will allow us to research and develop new and advanced weapons, giving us a decisive edge in any future conflicts."
- EGY_field_piece_research:0 "Field Peice Research"
+ EGY_field_piece_research:0 "Field Piece Research"
  EGY_field_piece_research_desc:0 "The artillery is the backbone of any modern army, and our artillery technology is in dire need of an update. By modernizing our artillery, we will be able to deliver more firepower on the battlefield and increase the effectiveness of our ground forces."
  EGY_logistical_brigades:0 "Logistical Brigades"
  EGY_logistical_brigades_desc:0 "The success of any military campaign depends on the ability to sustain and support troops in the field. By forming Logistical Brigades, we will be able to better support its troops by providing them with necessary supplies and equipment. This focus will allow us to establish a network of supply depots, transportation and medical units, and other logistical support."
@@ -521,6 +521,12 @@
  EGY_supremacy_over_the_mediterranean:0 "Supremacy Over the Mediterranean"
  EGY_supremacy_over_the_mediterranean_desc:0 "The [EGY.GetAdjective] navy has established itself as a mighty force, but if we want to achieve the internationally prestigious position we have long set for it is time to extend our reach and secure the Mediterranean as [EGY.GetAdjective] waters."
 
+ #suez crisis tree
+ EGY_a_humiliation:0 "A Staggering Humiliation"
+ EGY_a_humiliation_desc:0 "We have been humiliated. The Sinai and the east bank of the Suez is under Israeli control. It is up to us, do we come to the negotiation table? Or do we retake it by force?"
+ EGY_three_nos:0 "The Three Noes"
+ EGY_three_nos_desc:0 "No Peace.\nNo Negotiation.\nNo Recognition."
+
 
  #ideas
 
@@ -595,6 +601,8 @@
  EGY_decision_cost_command_power_2_blocked:0 "£command_power  §R20§!"
  EGY_decision_cost_command_power_3:0 "£command_power  §Y10§!"
  EGY_decision_cost_command_power_3_blocked:0 "£command_power  §R10§!"
+ EGY_decision_cost_command_power_4:0 "£pol_power §Y50§! £command_power §Y10§!"
+ EGY_decision_cost_command_power_4_blocked:0 "£pol_power §R50§! £command_power §R10§!"
  EGY_counterd_sudanese_separatists_recently:0 "Counterd [SUD.getAdjective] separatists recently"
 
  EGY_sudanese_uprising_timer:0 "Impending [SUD.GetAdjective] Uprising"
@@ -637,7 +645,7 @@
  EGY_pacify_separatists_in_bahr_al_ghazal_desc:0 "$EGY_standard_pacify_description$\n\n$EGY_high_compliance_reminder$"
  EGY_pacify_separatists_in_jonglei:0 "Pacify Separatists in [884.GetName]"
  EGY_pacify_separatists_in_jonglei_desc:0 "$EGY_standard_pacify_description$\n\n$EGY_high_compliance_reminder$"
- EGY_pacification_cost_change:0 "§YChanges depending on the level of separatism§!"
+ EGY_pacification_cost_change:0 "§YChanges depending on the level of separatism§!\n"
 
  EGY_sudanese_elections_category:0 "[SUD.GetAdjective] Elections"
  EGY_hold_elections_in_sudanese_states:0 "Hold elections in [SUD.GetAdjective] States"
@@ -735,11 +743,15 @@
 
  EGY_backed_down_from_albania:0 "Backed down from [ALB.GetNonIdeologyName]"
 
+ EGY_establish_a_palestinian_potectorate:0 "Establish a [PAL.GetAdjective] Potectorate"
+ EGY_establish_a_palestinian_potectorate_desc:0 "Now that we are taking action to liberate the [PAL.GetAdjective] people from their opressors, it is ideal we set up a calloboration government to help us ensure their self-governance and continued security."
+ EGY_establish_a_palestinian_potectorate_state_tt:0 "Gains ownership of all controlled [PAL.GetAdjective] states."
+
 
  #events
 
  egypt.1.t:0 "Death of Fuad I"
- egypt.1.d:0 "Fuad I, who has served as sultunate of our nation for 5 years and then a further 14 as king, has died in his sleep at the royal Koubbeh Palace. He was 68 years old.\n\nFuad I led our nation through the later stages of the Great War and oversaw the [EGY.GetAdjective] revolution of 1919 and the eventual declaration of independence from [ENG.GetNameDef] in 1922, he then proceeded to strengthen [EGY.GetNameDef]'s position globally, reforming and shaping the Kingdom as we know it.\n\nWith Fuad's death his son, Farouk will become the immediate sucessor to the throne as Farouk I. However due to Farouk not being of age at this time he will be placed under a regency headed by Aziz Ezzat and several other princes until he comes of age in a years time."
+ egypt.1.d:0 "Fuad I, who has served as sultan of our nation for 5 years and then a further 14 as king, has died in his sleep at the royal Koubbeh Palace. He was 68 years old.\n\nFuad I led our nation through the later stages of the Great War and oversaw the [EGY.GetAdjective] revolution of 1919 and the eventual declaration of independence from [ENG.GetNameDef] in 1922, he then proceeded to strengthen [EGY.GetNameDef]'s position globally, reforming and shaping the Kingdom as we know it.\n\nWith Fuad's death his son, Farouk will become the immediate sucessor to the throne as Farouk I. However due to Farouk not being of age at this time he will be placed under a regency headed by Aziz Ezzat and several other princes until he comes of age in a years time."
  egypt.1.a:0 "A national hero lost."
 
  egypt.2.t:0 "[getYear] Anglo-[EGY.GetAdjective] Conference"
@@ -817,12 +829,12 @@
  egypt.18.b:0 "We are not interested."
 
  egypt.19.t:0 "[GER.getName] promises their support"
- egypt.19.d:0 "[GER.GetNameDefCap] has expressed staunch sympathy for our cause and has jumped on the opportunity to counter [ENG.Adjective] in Africa and has offered us support in case of a rebellion wether it be in material or manpower aid, or both."
+ egypt.19.d:0 "[GER.GetNameDefCap] has expressed staunch sympathy for our cause and has jumped on the opportunity to counter [ENG.GetAdjective] in Africa and has offered us support in case of a rebellion wether it be in material or manpower aid, or both."
  egypt.19.a:0 "Excellent."
  egypt.19_tt:0 "We will receive an additional §Y2000 Infantry Equipment§! upon the civil wars outbreak."
 
  egypt.20.t:0 "[GER.getName] doesn't off their support"
- egypt.20.d:0 "While remaning sympathetic to our cause against realism and [ENG.GetNameDef], [GET.GetNameDef] will not be sending us any kind of support to assist our cause. Perhaps a blunder in relations, but there is perhaps futhur opportunies between the two of us should we be able to prove ourselves."
+ egypt.20.d:0 "While remaning sympathetic to our cause against realism and [ENG.GetNameDef], [GER.GetNameDef] will not be sending us any kind of support to assist our cause. Perhaps a blunder in relations, but there is perhaps futhur opportunies between the two of us should we be able to prove ourselves."
  egypt.20.a:0 "Unfortunate."
 
  egypt.21.t:0 "Armed revolts in Sudan"
@@ -917,7 +929,7 @@
  egypt.42.a:0 "The armed forces are becoming ever more rebellious."
 
  egypt.43.t:0 "[EGY.GetNameDefCap] moves to seize the [911.GetName] Canal"
- egypt.43.d:0 "Toady the [EGY.Adjective] leader, [EGY.GetLeader] has make it clear that the [911.GetName] Canal is a rightful part of the nation and should be returned. Even if that means by force.\n\nThis may be a justification of the canal, so we must be prepared for the worst."
+ egypt.43.d:0 "Toady the [EGY.GetAdjective] leader, [EGY.GetLeader] has make it clear that the [911.GetName] Canal is a rightful part of the nation and should be returned. Even if that means by force.\n\nThis may be a justification of the canal, so we must be prepared for the worst."
  egypt.43.a:0 "We need to do something."
 
  egypt.44.t:0 "[EGY.GetAdjective] victory at [911.GetName]"
@@ -1047,7 +1059,6 @@
  EGY_sudanese_nationalist_figure:0 "Sudanese Nationalist Figure"
  fierce_propagandist:0 "Fierce Propagandist"
  queen_consort:0 "Queen-Consort"
- imperial_land_owner_tfv:0 "Imperial Land Owner"
  imperial_land_owner:0 "Imperial Land Owner"
  communist_sympathiser:0 "Communist Sympathiser"
 
@@ -1112,8 +1123,8 @@
  EGY_KHEDIVE_neutrality:0 "Khedivate of Egypt"
  EGY_KHEDIVE_neutrality_DEF:0 "the Khedivate of Egypt"
 
- EGY_neutrality_nasser:0 "Republic of Egypt"
- EGY_neutrality_nasser_desc:0 "the Republic of Egypt"
+ EGY_neutrality_nasser:0 "Arab Republic of Egypt"
+ EGY_neutrality_nasser_desc:0 "the Arab Republic of Egypt"
 
  EGY_ARAB_REPUBLIC:0 "United Arabia"
  EGY_ARAB_REPUBLIC_ADJ:0 "Arab"
@@ -1129,6 +1140,11 @@
  EGY_ARAB_REPUBLIC_communism:0 "United Socialist Arab States"
  EGY_ARAB_REPUBLIC_communism_DEF:0 "the United Socialist Arab States"
  EGY_ARAB_REPUBLIC_communism_ADJ:0 "Arab"
+
+ PAL_ALL_PALESTINE:0 "Palestine"
+ PAL_ALL_PALESTINE_ADJ:0 "Palestinian"
+ PAL_ALL_PALESTINE_neutrality:0 "All-Palestine Potectorate"
+ PAL_ALL_PALESTINE_neutrality_DEF:0 "the All-Palestine Potectorate"
 
  EGY_sudanese_rebellion_warning:0 "§RShould separatism become too high the Sudanese may rebel!§!"
  EGY_sudanese_rebellion_soon:0 "§RSudanese separatists will launch a rebellion against the occupying forces.§!"
@@ -1203,4 +1219,4 @@
 
  #map
 
- TIRAN_STRAIT:0 "Strait of Tiran"
+ TIRAN_STRAIT:0 "Straits of Tiran"

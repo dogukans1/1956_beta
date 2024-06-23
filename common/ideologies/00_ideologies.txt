@@ -14,6 +14,9 @@ ideologies = {
 
 			socialism = {
 			}
+			
+			populism = {
+			}
 
 			oligarchic_democracy = {
 				can_be_randomly_selected = no
@@ -30,6 +33,9 @@ ideologies = {
 				can_be_randomly_selected = no
 			}
 			labour_zionism = {
+				can_be_randomly_selected = no
+			}
+			general_zionism = {
 				can_be_randomly_selected = no
 			}
 		}
@@ -70,7 +76,7 @@ ideologies = {
 			send_volunteers_tension = 0.50
 			guarantee_tension = 0.25
 			annex_cost_factor = 0.5
-			conscription_factor = 0.01
+			#defensive_war_stability_factor = 0.05 #upside
 			civilian_intel_to_others = 20.0
 			army_intel_to_others = 5.0
 			navy_intel_to_others = 20.0
@@ -123,6 +129,9 @@ ideologies = {
 			syndicalism = {
 				can_be_randomly_selected = no
 			}
+			national_bolshevism = {
+				can_be_randomly_selected = no
+			}
 		}
 
 		dynamic_faction_names = {
@@ -168,6 +177,7 @@ ideologies = {
 		types = {
 
 			nazism = {
+				can_be_randomly_selected = no
 			}
 
 			gen_nazism = {
@@ -178,6 +188,9 @@ ideologies = {
 
 			falangism = {
 			}
+			
+			ultranationalism = {
+			}
 
 			clerical_fascism = {
 				can_be_randomly_selected = no
@@ -186,6 +199,7 @@ ideologies = {
 			rexism = {
 				can_be_randomly_selected = no #Rexism being assigned to a Arab Country is hillarious, but its about time we stopped it from happening. 
 			}
+			
 			marhaenism_f = {
 				can_be_randomly_selected = no
 			}
@@ -193,7 +207,6 @@ ideologies = {
 			islamism = {
 				can_be_randomly_selected = no
 			}
-
 
 		}
 
@@ -298,10 +311,16 @@ ideologies = {
 			arab_socialism = {
 				can_be_randomly_selected = no
 			}
+
 			revisionist_zionism = {
 				can_be_randomly_selected = no
 			}
+			
 			colonial_government = {
+				can_be_randomly_selected = no
+			}
+
+			pashtun_nationalism = { #Only ideology for Daoud Khan
 				can_be_randomly_selected = no
 			}
 		}
@@ -334,7 +353,7 @@ ideologies = {
 			lend_lease_tension = 0.2 #Was 25
 			guarantee_tension = 0.35 #Was 40
 			drift_defence_factor = -0.45 #Was 40
-			political_power_factor = 0.01
+			#party_popularity_stability_factor = 0.05 #upside
 			civilian_intel_to_others = 20.0
 			army_intel_to_others = 10.0
 			navy_intel_to_others = 20.0

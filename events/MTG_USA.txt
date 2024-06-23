@@ -2461,7 +2461,7 @@ country_event = {
 			add_country_leader_role = {
 				country_leader = {
 					expire = "1965.1.1"
-					ideology = despotism
+					ideology = military_junta
 					traits = {
 						american_caesar
 						r56_trait_opposed_to_communism
@@ -3595,6 +3595,7 @@ country_event = {
 				transfer_state = 670
 				transfer_state = 286
 				transfer_state = 741
+				transfer_state = 925
 				transfer_state = 992
 				transfer_state = 993
 				transfer_state = 926
@@ -3651,6 +3652,7 @@ country_event = {
 			transfer_state = 670
 			transfer_state = 286
 			transfer_state = 741
+			transfer_state = 925
 			transfer_state = 992
 			transfer_state = 993
 			transfer_state = 926

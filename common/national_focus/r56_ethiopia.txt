@@ -295,8 +295,24 @@ focus = {
 				}				
 				add_equipment_to_stockpile = { type = gw_tank_equipment amount = 10 producer = ITA }
 			}			
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = ETH_generic_tank_plant	
+
+
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = ETH_generic_tank_plant_organization
+
+				mio:AST_com_aircraft_corporation_organization = {
+					add_mio_funds = 150
+				}
+			}
+			else = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = ETH_generic_tank_plant
+
+			}	
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -1325,6 +1341,10 @@ focus = {
 		}
 		
 		completion_reward = {
+			IF = {
+				limit = { has_dlc = "No Step Back" }
+				custom_effect_tooltip = ETH_unlock_spirit_airforce_tt
+			}			
 			add_tech_bonus = {
 				name = air_bonus
 				bonus = 1
@@ -1605,6 +1625,20 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			IF = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				custom_effect_tooltip = unlock_spirit_of_naval_academy_tt
+			}			
+			navy_experience = 35
+
+			add_doctrine_cost_reduction = {
+				name = ETH_modern_navy
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
 			add_tech_bonus = {
 				name = dd_bonus
 				bonus = 1
@@ -1612,6 +1646,7 @@ focus = {
 				uses = 1
 				category = dd_tech
 			}
+
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}

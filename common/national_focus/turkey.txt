@@ -14,7 +14,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 100 y = 3250 }
+	continuous_focus_position = { x = 4500 y = 1200 }
 
 	initial_show_position = {
 		x = 20
@@ -326,7 +326,7 @@ focus_tree = {
 		icon = GFX_goal_TUR_turkish_legacy
 		available = { 
 			has_civil_war = no
-			has_country_flag = TUR_ottoman_officers_invited_back
+			#has_country_flag = TUR_ottoman_officers_invited_back		#focus above forces this event option to be chosen
 		}
 		prerequisite = { focus = TUR_traditionalize_the_ataturk_legacy }
 		x = -10
@@ -580,24 +580,11 @@ focus_tree = {
 				# IF THEY ACCEPT
 				custom_effect_tooltip = if_they_accept_tt
 				effect_tooltip = {
-					if = {
-						limit = {
-							OR = {
-								has_dlc = "Together for Victory"
-								has_dlc = "Man the Guns"
-							}
-						}
-						ROOT = {
-							set_autonomy = {
-								target = PREV
-								autonomous_state = autonomy_dominion
-								freedom_level = 0.4
-							}
-						}
-						else = {
-							ROOT = {
-								puppet = PREV
-							}	
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_dominion
+							freedom_level = 0.4
 						}
 					}
 				}
@@ -1102,6 +1089,12 @@ focus_tree = {
 					state = 675
 					state = 291
 					state = 656
+					state = 1045
+					state = 1046
+					state = 1047
+					state = 1048
+					state = 1049
+					
 				}
 				custom_trigger_tooltip = {
 					tooltip = ROOT_is_not_controlled_by_root_or_ally_tt
@@ -1125,6 +1118,12 @@ focus_tree = {
 			add_state_claim = 676
 			add_state_claim = 675
 			add_state_claim = 291
+			add_state_core = 676
+			add_state_core = 1045
+			add_state_core = 1046
+			add_state_core = 1047
+			add_state_core = 1048
+			add_state_core = 1049
 			add_state_claim = 656
 			every_other_country = {
 				limit = {
@@ -1136,6 +1135,12 @@ focus_tree = {
 							state = 675
 							state = 291
 							state = 656
+							state = 1045
+							state = 1046
+							state = 1047
+							state = 1048
+							state = 1049
+					
 						}
 					}
 				}
@@ -1401,7 +1406,7 @@ focus_tree = {
 		available = {
 			OR = {
 				GER = { has_completed_focus = GER_the_central_powers }
-				GER = { has_completed_focus = GER_consolidate_new_reich }
+				GER = { has_completed_focus = GER_restore_the_empire }
 				HUN = { has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary }
 				AND = {
 					AUS = { has_completed_focus = AUS_old_ties }
@@ -1425,7 +1430,7 @@ focus_tree = {
 						has_government = neutrality
 						OR = {
 							has_completed_focus = GER_the_central_powers
-							has_completed_focus = GER_consolidate_new_reich
+							has_completed_focus = GER_restore_the_empire
 						}
 						
 						NOT = {
@@ -1463,7 +1468,7 @@ focus_tree = {
 				limit = {
 					GER = { 
 						has_government = neutrality
-						NOT = { has_completed_focus = GER_consolidate_new_reich }
+						NOT = { has_completed_focus = GER_restore_the_empire }
 						NOT = {
 							is_subject = yes
 						}						
@@ -1665,7 +1670,8 @@ focus_tree = {
 	focus = {
 		id = TUR_restore_suleinmans_heritage
 		icon = GFX_goal_ROM_balkans_domination
-		prerequisite = { focus = TUR_reclaim_macedonia focus = TUR_aligning_bulgaria }
+		prerequisite = { focus = TUR_reclaim_macedonia }
+		prerequisite = { focus = TUR_aligning_bulgaria }
 		x = 1
 		y = 1
 		relative_position_id = TUR_reclaim_macedonia
@@ -1845,6 +1851,15 @@ focus_tree = {
 			add_popularity = { ideology = democratic popularity = 0.1 }
 			hidden_effect = {
 				clr_country_flag = TUR_held_democratic_election
+			}
+			if = {	#choosing DP party gives a civil war even when going democratic
+				limit = {
+					has_country_leader = {
+						character = TUR_adnan_menderes
+						ruling_only = yes
+					}
+				}
+				country_event = { id = bftb_turkey.22 }
 			}
 		}
 	}
@@ -2223,6 +2238,10 @@ focus_tree = {
 					NOT = {
 						TAG = ISR
 						TAG = KUR
+						AND = {
+							TAG = SYR
+							controls_state = 799
+						}
 					}
 					OR = {
 						AND = {
@@ -2498,6 +2517,9 @@ focus_tree = {
 		id = TUR_peace_at_home
 		icon = GFX_goal_tripartite_pact
 		prerequisite = { focus = TUR_continue_the_policy_of_etatism }
+		mutually_exclusive = {
+			focus = TUR_revive_turkish_revolutionism
+		}
 		available = {
 			OR = {
 				has_country_leader = {
@@ -2627,6 +2649,9 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		prerequisite = { focus = TUR_continue_the_policy_of_etatism }
 		prerequisite = { focus = TUR_solidify_the_seventh_inonu_government }
+		mutually_exclusive = {
+			focus = TUR_peace_at_home
+		}
 		available = {
 			OR = {
 				has_country_leader = {
@@ -4166,6 +4191,10 @@ focus_tree = {
 					}
 				}
 			}
+			NOT = {
+				is_in_faction_with = SOV
+				is_in_faction_with = GER
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -5140,7 +5169,7 @@ focus_tree = {
 
 	focus = {
 		id = TUR_invite_german_officers_to_izmir
-		icon = GFX_goal_ROM_invite_german_advisors
+		icon = GFX_goal_generic_officers
 		prerequisite = { focus = TUR_the_german_turkish_friendship_treaty }
 		available = { 
 			NOT = { has_war_with = GER }
@@ -5706,7 +5735,7 @@ focus_tree = {
 
 	focus = {
 		id = TUR_establish_the_committee_of_pan_turkism
-		icon = GFX_goal_TUR_turkish_legacy
+		icon = GFX_goal_TUR_pan_turan
 		prerequisite = { focus = TUR_join_the_axis }
 		x = 0
 		y = 2
@@ -6376,13 +6405,13 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = TUR_learning_from_tripolitania
+				name = TUR_learning_from_the_tripolitanian_war
 				bonus = 1.0
 				uses = 1
 				category = engineers_tech
 			}
 			add_tech_bonus = {
-				name = TUR_learning_from_tripolitania
+				name = TUR_learning_from_the_tripolitanian_war
 				bonus = 1.0
 				uses = 1
 				category = recon_tech
@@ -6465,6 +6494,11 @@ focus_tree = {
 			add_state_claim = 680
 			add_state_claim = 676
 			add_state_claim = 291
+			add_state_claim = 1045
+			add_state_claim = 1046
+			add_state_claim = 1047
+			add_state_claim = 1048
+			add_state_claim = 1049
 			add_state_claim = 419
 			add_state_claim = 988
 			add_state_claim = 421
@@ -6537,38 +6571,40 @@ focus_tree = {
 			base = 10
 			modifier = {
 				factor = 0
-				count_triggers = {	#at least 2 suitable candidates, added faction check over availability
-					amount = 2
-					GRE = {
-						exists = yes
-						is_subject = no
-						is_in_faction = no
-						NOT = {
-							has_war_with = ROOT
+				NOT = {
+					count_triggers = {	#at least 2 suitable candidates, added faction check over availability
+						amount = 2
+						GRE = {
+							exists = yes
+							is_subject = no
+							is_in_faction = no
+							NOT = {
+								has_war_with = ROOT
+							}
 						}
-					}
-					HUN = {
-						exists = yes
-						is_subject = no
-						is_in_faction = no
-						NOT = {
-							has_war_with = ROOT
+						HUN = {
+							exists = yes
+							is_subject = no
+							is_in_faction = no
+							NOT = {
+								has_war_with = ROOT
+							}
 						}
-					}
-					ROM = {
-						exists = yes
-						is_subject = no
-						is_in_faction = no
-						NOT = {
-							has_war_with = ROOT
+						ROM = {
+							exists = yes
+							is_subject = no
+							is_in_faction = no
+							NOT = {
+								has_war_with = ROOT
+							}
 						}
-					}
-					YUG = {
-						exists = yes
-						is_subject = no
-						is_in_faction = no
-						NOT = {
-							has_war_with = ROOT
+						YUG = {
+							exists = yes
+							is_subject = no
+							is_in_faction = no
+							NOT = {
+								has_war_with = ROOT
+							}
 						}
 					}
 				}
@@ -9149,6 +9185,11 @@ focus_tree = {
 			add_state_claim = 680
 			add_state_claim = 291
 			add_state_core = 676
+			add_state_core = 1045
+			add_state_core = 1046
+			add_state_core = 1047
+			add_state_core = 1048
+			add_state_core = 1049
 			if = {
 				limit = {
 					has_global_flag = TUR_soviets_keeping_eye_on_turkey
@@ -9164,6 +9205,12 @@ focus_tree = {
 								controls_state = 680
 								controls_state = 676
 								controls_state = 291
+								controls_state = 1045
+								controls_state = 1046
+								controls_state = 1047
+								controls_state = 1048
+								controls_state = 1049
+								
 							}
 						}
 					}
@@ -9185,6 +9232,12 @@ focus_tree = {
 								controls_state = 680
 								controls_state = 676
 								controls_state = 291
+								controls_state = 1045
+								controls_state = 1046
+								controls_state = 1047
+								controls_state = 1048
+								controls_state = 1049
+								
 							}
 						}
 					}
@@ -9207,6 +9260,12 @@ focus_tree = {
 								controls_state = 680
 								controls_state = 676
 								controls_state = 291
+								controls_state = 1045
+								controls_state = 1046
+								controls_state = 1047
+								controls_state = 1048
+								controls_state = 1049
+								
 							}
 						}
 					}
@@ -9231,6 +9290,12 @@ focus_tree = {
 								controls_state = 680
 								controls_state = 676
 								controls_state = 291
+								controls_state = 1045
+								controls_state = 1046
+								controls_state = 1047
+								controls_state = 1048
+								controls_state = 1049
+								
 							}
 						}
 					}
@@ -9394,10 +9459,8 @@ focus_tree = {
 			unlock_decision_category_tooltip = form_turan_category
 			if = {
                 limit = {
-                    AND = {
-                        has_dlc = "La Resistance"
-                        has_dlc = "Battle for the Bosporus"
-                    }
+					has_dlc = "La Resistance"
+					has_dlc = "Battle for the Bosporus"
                     NOT = {
                         any_other_country = {
                             has_country_flag = recruited_ruzi_nazar
@@ -10171,11 +10234,13 @@ focus_tree = {
 					has_dlc = "By Blood Alone"
 				}
 				add_tech_bonus = {
+					name = TUR_patrol_the_seas
 					bonus = 1.5
 					uses = 1
 					category = cat_torpedoes
 				}
 				add_tech_bonus = {
+					name = TUR_patrol_the_seas
 					bonus = 1.5
 					uses = 1
 					category = medium_air

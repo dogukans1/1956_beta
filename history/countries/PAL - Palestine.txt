@@ -31,7 +31,6 @@ add_ideas = PAL_incompetent_high_command
 
 set_country_flag = PAL_coup_stable
 
-set_cosmetic_tag = PAL_civilwar
 
 set_party_name = {
 	ideology = neutrality 
@@ -69,17 +68,6 @@ set_technology = {
 	camo = 1	
 		
 	infantry_weapons = 1
-}
-if = {
-	limit = { has_dlc = "By Blood Alone" }
-		set_technology = {
-
-		}
-	else = {
-		set_technology = {
-
-		}
-	}
 }
 if = {
 	limit = {

@@ -1,20 +1,20 @@
 characters={
 	LIE_franz_i ={
-		name="Franz de Paula Maria Karl"
+		name="Franz I"
 		portraits={
 			civilian={
 				large="gfx/leaders/LIE/r56_portrait_LIE_Franz_I.dds"
 			}
 		}
 		country_leader={
-			ideology=absolute_monarchism
-			traits = { LIE_franz_i_prince_of_liechtenstein }
+			ideology=constitutional_monarchy
+			traits = { charismatic_monarch }
 			expire="1965.1.1"
 			id=-1
 		}
 	}
 	LIE_franz_ii ={
-		name="Franz Josef Maria Karl"
+		name="Franz Joseph II"
 		portraits={
 			civilian={
 				large="gfx/leaders/LIE/r56_portrait_LIE_Franz_Joseph_II.dds"
@@ -22,8 +22,8 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=absolute_monarchism
-			traits = { LIE_franz_joseph_ii_prince_of_liechtenstein }
+			ideology=constitutional_monarchy
+			traits = { party_appeaser }
 			expire="1965.1.1"
 			id=-1
 		}
@@ -90,10 +90,7 @@ characters={
 				original_tag = LIE
 			}
 			available = {
-				OR = {
-					has_completed_focus = LIE_the_princely_cabinet_of_national_defence
-					has_completed_focus = LIE_maintain_foreign_contacts
-				}
+				has_completed_focus = LIE_the_princely_cabinet_of_national_defence
 				NOT = {
 					has_country_leader = {
 						character = LIE_josef_hoop
@@ -106,7 +103,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=centrism_democratic
+			ideology=conservatism
 			traits = { tenacious_negotiator }
 			expire="1965.1.1"
 			id=-1
@@ -199,12 +196,8 @@ characters={
 		}
 	}
 	LIE_heinrich_aloys_maria_joseph ={
-		name="Heinrich Aloys Maria Joseph"
+		name="Heinrich Hartneid von Liechtenstein"
 		portraits={
-			army={
-				large="gfx/leaders/LIE/r56_portrait_LIE_Heinrich_Aloys_Maria_Joseph.dds"
-				small="GFX_idea_LIE_heinrich_aloys_maria_joseph_military"
-			}
 			civilian={
 				small="GFX_idea_LIE_heinrich_aloys_maria_joseph"
 			}
@@ -227,37 +220,17 @@ characters={
 				factor = 1.000
 			}
 		}
-		advisor={ 
-			slot = high_command
-			idea_token = LIE_heinrich_aloys_maria_joseph_army
-			ledger = army
-			allowed = {
-				original_tag = LIE
-			}
-			available = {
-				NOT = {
-					has_government = communism
-				}
-			}
-			traits = {
-				army_regrouping_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
 	}
-	LIE_ludwig_marxer ={
-		name="Ludwig Marxer"
+	LIE_anton_frommelt ={
+		name="Anton Frommelt"
 		portraits={
 			civilian={
-				small="GFX_idea_generic_political_advisor_europe_3"
+				small="GFX_idea_LIE_anton_frommelt"
 			}
 		}
 		advisor={
 			slot = political_advisor
-			idea_token = LIE_ludwig_marxer
+			idea_token = LIE_anton_frommelt
 			allowed = {
 				original_tag = LIE
 			}
@@ -266,7 +239,7 @@ characters={
 					has_government = communism
 					has_government = fascism
 				}
-				has_completed_focus = LIE_radicalize_the_germanist_movement
+				has_completed_focus = LIE_the_power_concession
 				if  = {
 					limit  = {
 						has_dlc = "Man the Guns"
@@ -352,25 +325,50 @@ characters={
 			}
 		}
 	}
-	LIE_alois_vogt ={
-		name="Alois Vogt"
+	LIE_emil_beck ={
+		name="Emil Beck"
 		portraits={
 			civilian={
-				small="GFX_idea_LIE_alois_vogt"
+				small="GFX_idea_generic_political_advisor_europe_3"
 			}
 		}
 		advisor={
 			slot = political_advisor
-			idea_token = LIE_alois_vogt 
+			idea_token = LIE_emil_beck
 			allowed = {
 				original_tag = LIE
 			}
 			available = {
+				has_completed_focus = LIE_maintain_foreign_contacts
+			}
+			traits = {
+				smooth_talking_charmer
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	LIE_carl_freiherr_von_vogelsang ={
+		name="Carl Freiherr von Vogelsang"
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = LIE_carl_freiherr_von_vogelsang 
+			allowed = {
+				original_tag = LIE
+			}
+			available = {
+				NOT = {
+					has_government = communism
+				}
 				OR = {
 					has_completed_focus = LIE_radicalize_the_germanist_movement
-					NOT = {
-						has_government = communism
-					}
 					AND = {
 						has_government = democratic
 						has_completed_focus = LIE_the_new_party_policy
@@ -386,21 +384,21 @@ characters={
 			}
 		}
 	}
-	LIE_anton_frommelt ={
-		name="Anton Frommelt"
+	LIE_ludwig_marxer ={
+		name="Ludwig Marxer"
 		portraits={
 			civilian={
-				small="GFX_idea_LIE_anton_frommelt"
+				small="GFX_idea_generic_political_advisor_europe_3"
 			}
 		}
 		advisor={
 			slot = political_advisor
-			idea_token = LIE_anton_frommelt
+			idea_token = LIE_ludwig_marxer
 			allowed = {
 				original_tag = LIE
 			}
 			available = {
-
+				
 			}
 			traits = {
 				silent_workhorse
@@ -412,7 +410,7 @@ characters={
 		}
 	}
 	LIE_karl_alfred_maria_hartmann ={
-		name="Karl Alfred Maria Hartmann"
+		name="Karl Alfred von Liechtenstein"
 		portraits={
 			civilian={
 				large="gfx/leaders/LIE/r56_portrait_LIE_Karl_Alfred_Maria_Hartmann.dds"
@@ -430,6 +428,31 @@ characters={
 			}
 			traits = {
 				quartermaster_general
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	LIE_alois_vogt ={
+		name="Alois Vogt"
+		portraits={
+			civilian={
+				small="GFX_idea_LIE_alois_vogt"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = LIE_alois_vogt 
+			allowed = {
+				original_tag = LIE
+			}
+			available = {
+				
+			}
+			traits = {
+				armaments_organizer
 			}
 			cost = 150
 			ai_will_do = {
@@ -487,6 +510,34 @@ characters={
 			}
 		}
 	}
+	LIE_richard_meier ={
+		name="Richard Meier"
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = LIE_richard_meier
+			allowed = {
+				original_tag = LIE
+			}
+			available = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+			traits = {
+				r56_trait_anti_fascist
+				resistance_figure
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
 	LIE_gustav_schadler ={
 		name="Gustav Schädler"
 		portraits={
@@ -504,16 +555,16 @@ characters={
 
 			}
 			traits = {
-				corrupt editor
+				editor
 			}
-			cost = 100
+			cost = 150
 			ai_will_do = {
 				factor = 1.000
 			}
 		}
 	}
 	LIE_alois_gonzaga_maria_adolf ={
-		name="Alois Gonzaga Maria Adolf"
+		name="Alois von Liechtenstein"
 		portraits={
 			civilian={
 				large="gfx/leaders/LIE/r56_portrait_LIE_Alois_Gonzaga_Maria_Adolf.dds"
@@ -601,7 +652,7 @@ characters={
 		}
 	}
 	LIE_georg_aloys_maria_hartmann ={
-		name="Georg Aloys Maria Hartmann"
+		name="Georg von Liechtenstein"
 		portraits={
 			army={
 				small="GFX_idea_europe_generic_land_5"
@@ -624,12 +675,13 @@ characters={
 		}
 	}
 	LIE_georgina_von_wilczek ={
-		name="Georgina von Wilczek"
+		name="Gina von Liechtenstein"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_female_europe%20"
+				small="GFX_idea_generic_army_female_europe"
 			}
 		}
+		gender = female
 		advisor={ # When your wife becomes the founder of the Liechtenstein Red Cross
 			slot = high_command
 			idea_token = LIE_georgina_von_wilczek
@@ -643,6 +695,9 @@ characters={
 					has_government = neutrality
 					has_government = democratic
 				}
+				NOT = {
+					has_idea = r56i_laws_gender_patriarchy
+				}
 			}
 			traits = {
 				army_logistics_1
@@ -654,7 +709,7 @@ characters={
 		}
 	}
 	LIE_johannes_franz_maria_balthasar ={
-		name="Johannes Franz Maria Balthasar"
+		name="Johannes von Liechtenstein"
 		portraits={
 			civilian={
 				large="gfx/leaders/LIE/r56_portrait_LIE_Johannes_Franz_Maria_Balthasar.dds"
@@ -678,6 +733,35 @@ characters={
 			}
 			traits = {
 				navy_chief_maneuver_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	LIE_karl_aloys_von_liechtenstein ={
+		name="Karl Aloys von Liechtenstein"
+		portraits={
+			army={
+				large="gfx/leaders/LUX/r56_portrait_portrait_LUX_Felix_de_Bourbon_Parma.dds" # they look similar enough
+				small="GFX_idea_LUX_felix_de_bourbon_parma"
+			}
+		}
+		advisor={ # Cavalry officer in WW1
+			slot = high_command
+			idea_token = LIE_karl_aloys_von_liechtenstein
+			ledger = army
+			allowed = {
+				original_tag = LIE
+			}
+			available = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			traits = {
+				army_cavalry_2
 			}
 			cost = 100
 			ai_will_do = {

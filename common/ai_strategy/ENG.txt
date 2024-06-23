@@ -240,6 +240,7 @@ bba_air_prod_2 = {
 	enable = {
 		date > 1940.1.1
 	}
+	abort = { always = no }
 
 	#Air unit factors
 	ai_strategy = {
@@ -277,7 +278,7 @@ bba_air_prod_2 = {
 		id = cas
 		value = 3
 	}
- 
+
 	ai_strategy = {
 		type = unit_ratio
 		id = naval_bomber
@@ -355,6 +356,7 @@ build_more_patrol_bombers = {
 		}
 		tag = ENG
 	}
+	abort = { always = no }
 
 	ai_strategy = {
 		type = unit_ratio
@@ -560,6 +562,7 @@ ENG_template_design_2 = {
 	enable = {
 		date > 1940.1.1
 	}
+	abort = { always = no }
 
 	ai_strategy = {
 		type = template_prio
@@ -790,6 +793,7 @@ ENG_naval_role_ratios_historical = {
 		original_tag = ENG
 	}
 	enable = { always = yes }
+	abort = { always = no }
 
 	ai_strategy = {
 		type = role_ratio
@@ -998,7 +1002,7 @@ ENG_defend_egypt_from_italy = {
 		}
 	}
 	abort_when_not_enabled = yes
-	
+
 	ai_strategy = {
 		type = front_unit_request
 		tag = EGY
@@ -1023,6 +1027,15 @@ ENG_USA_focus_on_europe = {
 			}
 		}
 		has_global_flag = FRA_already_surrendered
+	}
+	abort = {
+		NOT = {
+			any_enemy_country = {
+				capital_scope = {
+					is_on_continent = europe
+				}
+			}
+		}
 	}
 
 	ai_strategy = {
@@ -1062,6 +1075,15 @@ ENG_USA_focus_on_europe_more = {
 		}
 		has_global_flag = FRA_already_surrendered
 	}
+	abort = {
+		NOT = {
+			any_enemy_country = {
+				capital_scope = {
+					is_on_continent = europe
+				}
+			}
+		}
+	}
 
 	ai_strategy = {
 		type = front_unit_request
@@ -1094,6 +1116,15 @@ ENG_USA_focus_on_europe_loads_more = {
 		is_historical_focus_on = yes
 		date > 1943.6.1
 		has_global_flag = FRA_already_surrendered
+	}
+	abort = {
+		NOT = {
+			any_enemy_country = {
+				capital_scope = {
+					is_on_continent = europe
+				}
+			}
+		}
 	}
 
 	ai_strategy = {
@@ -1186,6 +1217,15 @@ ENG_gang_up_GER_with_USA = {
 			}
 		}
 	}
+	abort = {
+		NOT = {
+			any_enemy_country = {
+				capital_scope = {
+					is_on_continent = europe
+				}
+			}
+		}
+	}
 	# after FRA falls, both ENG and USA will try to help in europe and africa
 	ai_strategy = {
 		type = force_defend_ally_borders
@@ -1238,6 +1278,17 @@ dont_get_sucked_into_FRA_and_die = {
 		has_war_together_with = FRA
 
 		date < 1941.9.9
+
+		NOT = {
+			AND = {
+				FRA = {
+					surrender_progress < 0.05
+				}
+				GER = {
+					surrender_progress > 0.10	#just Rhineland is 11%
+				}
+			}
+		}
 
 		NOT = { has_global_flag = FRA_already_surrendered }
 	}
@@ -1438,6 +1489,7 @@ ENG_Defends_Mediterranean = {
 	enable = {
 		always = yes
 	}
+	abort = { always = no }
 
 	# Alexandria
 	ai_strategy = {
@@ -1473,6 +1525,7 @@ ENG_convoy_raids_german_italian_convoys = {
 			has_war_with = ITA
 		}
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = naval_convoy_raid_region
@@ -1562,12 +1615,12 @@ ENG_norway_is_not_THAT_important = {
 		id = scandinavia
 		value = -80
 	}
-	
+
 	ai_strategy = { #Not sorry
 		type = dont_defend_ally_borders
 		id = "NOR"
 		value = 10
-	}	
+	}
 }
 
 ENG_super_boost_armor_div = { #lets make sure the uk upgrades rtr to divs
@@ -1774,7 +1827,7 @@ ENG_USA_d_day = {
 		exists = yes
 		date > 1943.9.1
 	}
-	
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -1802,6 +1855,11 @@ ENG_RAJ_the_hot_gates = {
 		OR = {
 			671 = { is_controlled_by = JAP }
 			670 = { is_controlled_by = JAP }
+		}
+	}
+	abort = {
+		NOT = {
+			has_war_with = JAP
 		}
 	}
 
@@ -1858,10 +1916,10 @@ COMMONWEALTH_disregard_france_a_bit = {
 		is_historical_focus_on = yes
 	}
 	abort = {
-		FRA = { 
+		FRA = {
 			OR = {
 				has_capitulated = yes
-				is_government_in_exile = yes 
+				is_government_in_exile = yes
 			}
 		}
 	}
@@ -1885,10 +1943,10 @@ ENG_disregard_france_a_bit = {
 		is_historical_focus_on = yes
 	}
 	abort = {
-		FRA = { 
+		FRA = {
 			OR = {
 				has_capitulated = yes
-				is_government_in_exile = yes 
+				is_government_in_exile = yes
 			}
 		}
 	}

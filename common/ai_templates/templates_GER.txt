@@ -198,6 +198,8 @@ armored_GER = {
 		allowed_types = {
 			modern_armor
 			heavy_armor
+
+			infantry
 			
 			motorized
 			mechanized
@@ -244,7 +246,7 @@ armored_GER = {
 			}
 		}
 		
-		target_width = 18.0
+		target_width = 30
 		width_weight = 1.5
 		column_swap_factor = 0.5
 
@@ -302,26 +304,27 @@ armored_GER = {
 			}
 			
 			regiments = {
-				medium_armor = 4
-				motorized = 4
+				medium_armor = 8
+				motorized = 7
 			}
 		}
 
 		allowed_types = {
-			modern_armor
-			light_armor 
+			#modern_armor
+			#light_armor 
 			medium_armor
 			motorized
 			mechanized
 			#medium_sp_artillery_brigade
-			mot_artillery_brigade
-			mot_anti_air_brigade
-			motorized_rocket_brigade 
+			#mot_artillery_brigade
+			#mot_anti_air_brigade
+			#motorized_rocket_brigade 
 
 			engineer
 			mot_recon
 			light_tank_recon
 			signal_company
+			anti_air
 			maintenance_company
 			logistics_company
 
@@ -361,7 +364,7 @@ armored_GER = {
 			}
 		}
 		
-		target_width = 18.0
+		target_width = 30.0
 		width_weight = 1.5
 		column_swap_factor = 0.5
 		
@@ -409,24 +412,26 @@ armored_GER = {
 			match_value = 7000.0
 			
 			support = {
+				engineer = 1
 				mot_recon = 1
-				signal_company = 1
+				maintenance_company = 1
+				logistics_company = 1
 			}
 			
 			regiments = {
-				medium_armor = 5 #remove sp
-				motorized = 4
+				medium_armor = 8 #remove sp
+				motorized = 7
 			}
 		}
 
 		allowed_types = {
 			#light_armor
-			modern_armor
+			#modern_armor
 			medium_armor
 			motorized
 			mechanized
-			medium_sp_artillery_brigade
-			medium_sp_anti_air_brigade
+			#medium_sp_artillery_brigade
+			#medium_sp_anti_air_brigade
 			#motorized_rocket_brigade 
 			engineer
 			mot_recon
@@ -467,7 +472,7 @@ armored_GER = {
 			}
 		}
 		
-		target_width = 20.0
+		target_width = 30.0
 		width_weight = 1.5
 		column_swap_factor = 0.5
 		
@@ -515,25 +520,27 @@ armored_GER = {
 			match_value = 7000.0
 			
 			support = {
-				light_tank_recon = 1 #Use the light tank stockpile for something
-				signal_company = 1
+				engineer = 1
+				mot_recon = 1
+				maintenance_company = 1
+				logistics_company = 1
 			}
 			
 			regiments = {
-				medium_armor = 5 #remove sp
-				mechanized = 5
+				medium_armor = 8 #remove sp
+				motorized = 7
 			}
 		}
 
 		allowed_types = {
-			light_armor
-			modern_armor
+			#light_armor
+			#modern_armor
 			medium_armor
 			motorized
 			mechanized
-			medium_sp_artillery_brigade
-			medium_sp_anti_air_brigade
-			#motorized_rocket_brigade 
+			#medium_sp_artillery_brigade
+			#medium_sp_anti_air_brigade
+			#motorized_rocket_brigade
 			engineer
 			mot_recon
 			light_tank_recon
@@ -575,7 +582,7 @@ armored_GER = {
 			}
 		}
 		
-		target_width = 20.0
+		target_width = 30.0
 		width_weight = 1.5
 		column_swap_factor = 0.5
 		
@@ -623,30 +630,31 @@ armored_GER = {
 			match_value = 9000.0
 			
 			support = {
-				light_tank_recon = 1
-				signal_company = 1
-				anti_air = 1
+				engineer = 1
+				mot_recon = 1
+				maintenance_company = 1
+				logistics_company = 1
 			}
 			
 			regiments = {
-				medium_armor = 5 #remove sp
-				mechanized = 4
-				medium_sp_artillery_brigade = 1
+				medium_armor = 8 #remove sp
+				motorized = 7
 			}
 		}
 
 		allowed_types = {
-			light_armor
-			modern_armor
+			#light_armor
+			#modern_armor
 			medium_armor
 			motorized
 			mechanized
-			medium_sp_artillery_brigade
-			medium_sp_anti_air_brigade
+			#medium_sp_artillery_brigade
+			#medium_sp_anti_air_brigade
 			#motorized_rocket_brigade 
 			engineer
 			mot_recon
-			light_tank_recon
+			#light_tank_recon
+			anti_air
 			signal_company
 			maintenance_company
 			logistics_company
@@ -871,6 +879,7 @@ anti_armor_GER = {
 			motorized
 			mechanized
 			engineer
+			recon
 			field_hospital
 			anti_tank
 			artillery
@@ -1130,6 +1139,7 @@ infantry_GER = {
 				num_of_military_factories < 50
 			}
 		}
+
 		target_width = 21.0
 		width_weight = 1.3
 		column_swap_factor = 0.5
@@ -1273,7 +1283,7 @@ infantry_GER = {
 			support = {
 				engineer = 1
 				anti_air = 1
-				maintenance_company = 1
+				field_hospital = 1
 				logistics_company = 1
 			}
 			
@@ -1298,7 +1308,108 @@ infantry_GER = {
 			rocket_artillery
 			rocket_artillery_brigade
 		}
-	}	
+	}
+	
+	
+	infantry_upgrade_2_GER = {
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 25
+				AND = {
+					num_of_military_factories > 75
+					date > 1941.1.1
+				}
+			}
+		}
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 25
+				AND = {
+					num_of_military_factories > 75
+					date > 1941.1.1
+				}
+			}
+		}
+		target_width = 35.0
+		width_weight = 1.3
+		column_swap_factor = 0.5
+		reinforce_prio = 1
+		
+				stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			1.00 #-- breakthrough
+			0.00 #-- hardness
+			4.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			1.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00 #-- supply_consumption_factor
+			0.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- build_cost_ic
+		}
+		
+		target_template = {
+			weight = 0.9
+			match_value = 9000.0
+			
+			support = {
+				engineer = 1
+				#anti_air = 1
+				field_hospital = 1
+				logistics_company = 1
+			}
+			
+			regiments = {
+				infantry = 14
+				artillery_brigade = 2
+				anti_air_brigade = 1
+			}
+		}
+		
+		allowed_types = {
+			infantry
+			engineer
+			recon
+			field_hospital
+			logistics_company
+			signal_company
+			maintenance_company
+			anti_tank
+			anti_air
+			anti_air_brigade
+			artillery
+			artillery_brigade
+			rocket_artillery
+			rocket_artillery_brigade
+		}
+	}
 }
 
 mountaineers_GER = {
@@ -1396,12 +1507,16 @@ mountaineers_GER = {
 		
 		allowed_types = {
 			mountaineers
-			artillery
+			artillery_brigade
+
+			engineer
 			recon
+			artillery
+			anti_tank
+			anti_air
 			signal_company
 			field_hospital
 			logistics_company
-			anti_tank
 		}
 	}
 }
@@ -1503,7 +1618,12 @@ marines_GER = {
 		
 		allowed_types = {
 			marine
+			artillery_brigade
+
 			engineer
+			recon
+			artillery
+			anti_tank
 			logistics_company
 		}
 	}
@@ -1624,7 +1744,7 @@ shocktroop_GER = {
 	}
 	
 	roles = {
-		mobile
+		shocktroop		#was mobile for some reason thus creating errors - Fantom
 	}
 	
 	upgrade_prio = {
@@ -1707,7 +1827,7 @@ shocktroop_GER = {
 			support = {
 				engineer = 1
 				artillery = 1
-				#anti_tank = 1
+				field_hospital = 1
 			}
 			
 			regiments = {
@@ -1722,6 +1842,7 @@ shocktroop_GER = {
 			field_hospital
 			logistics_company
 			signal_company
+			artillery
 			anti_tank
 			anti_air
 			mot_artillery_brigade

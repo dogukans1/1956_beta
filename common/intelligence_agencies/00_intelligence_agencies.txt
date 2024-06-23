@@ -551,6 +551,21 @@ intelligence_agency = {
 
 intelligence_agency = {
 	
+	picture = GFX_intelligence_agency_logo_isr
+	names = { "HaMossad" "The Agency" }
+	
+	available = { 
+		tag = ISR
+	}
+	
+	default = { 		
+		tag = ISR
+	} 
+}
+
+
+intelligence_agency = {
+	
 	picture = GFX_r56_agency_logo_1
 	names = { "DSN" }
 	
@@ -788,6 +803,22 @@ intelligence_agency = {
 	default = { 		
 		tag = SWI
 		has_completed_focus = SWI_federal_police
+	} 
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_afg_khad
+	names = { "Khadamat-e Aetla'at-e Dawlat" }
+	
+	available = { 
+		tag = AFG
+		has_completed_focus = AFG_form_khad
+	}
+	
+	default = { 		
+		tag = AFG
+		has_completed_focus = AFG_form_khad
 	} 
 }
 

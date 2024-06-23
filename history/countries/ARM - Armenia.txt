@@ -19,7 +19,8 @@ set_technology = {
 	tech_engineers = 1
 	tech_military_police = 1
 	tech_mountaineers = 1
-	motorised_infantry = 1
+	tech_trucks = 1
+motorised_infantry = 1
 	paratroopers = 1
 	gw_artillery = 1
 }
@@ -155,16 +156,5 @@ recruit_character = ARM_abraham_alikhanov
 	#ideology = stalinism
 	#traits = {
 		
-	#}
-#}
-
-#create_country_leader = {
-	#name = "Jaques Bagratuni"
-	#desc = ""
-	#picture = "gfx/leaders/ARM/r56_portrait_ARM_Jaques_Bagratuni.dds"
-	#expire = "1953.3.1"
-	#ideology = despotism
-	#traits = {
-		#r56_trait_opposed_to_communism
 	#}
 #}
