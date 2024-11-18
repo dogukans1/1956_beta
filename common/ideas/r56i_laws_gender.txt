@@ -31,11 +31,16 @@ ideas = {
 			}
 			
 			modifier = {
-				industrial_capacity_factory = 0.05
-				industrial_capacity_dockyard = 0.05
-				production_factory_efficiency_gain_factor = 0.05
-				production_speed_facility_factor = -0.075
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_dockyard = -0.05
+				industrial_capacity_factory = -0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				research_speed_factor = -0.05
 				conscription_factor = -0.075
+				monthly_population = 0.05
+				stability_factor = 0.05
+				war_support_factor = -0.05
 				hidden_modifier = { #Needs to hide for non DLC plebs
 					female_random_operative_chance = -1
 					female_random_scientist_chance = -1
@@ -113,11 +118,16 @@ ideas = {
 			}
 			
 			modifier = {
-				industrial_capacity_factory = 0.075
-				industrial_capacity_dockyard = 0.075
-				production_factory_efficiency_gain_factor = 0.10
-				production_speed_facility_factor = -0.15
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_dockyard = -0.1
+				industrial_capacity_factory = -0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				research_speed_factor = -0.1
 				conscription_factor = -0.15
+				monthly_population = 0.1
+				stability_factor = 0.1
+				war_support_factor = -0.1
 				hidden_modifier = { #Needs to hide for non DLC plebs
 					female_random_operative_chance = -2
 					female_random_scientist_chance = -2
@@ -150,12 +160,17 @@ ideas = {
 			}
 
 			modifier = {
-				industrial_capacity_factory = -0.05
-				industrial_capacity_dockyard = -0.05
-				production_speed_facility_factor = 0.075
-				#production_factory_start_efficiency_factor = -0.05	#can start production at 0 efficiency, nerf stat above further if needed
-				weekly_manpower = 100 #Silly, but better for small nations who need the raw MP
+				production_speed_buildings_factor = -0.05
+				industrial_capacity_dockyard = 0.05
+				industrial_capacity_factory = 0.05
+				army_core_attack_factor = -0.05
+				army_core_defence_factor = -0.05
+				research_speed_factor = 0.05
 				conscription_factor = 0.075
+				monthly_population = -0.05
+				stability_factor = -0.05
+				war_support_factor = 0.05
+				weekly_manpower = 100
 				#female_random_operative_chance = 3
 			}
 
@@ -214,12 +229,17 @@ ideas = {
 			}
 			
 			modifier = {
-				industrial_capacity_factory = -0.075
-				industrial_capacity_dockyard = -0.075
-				production_speed_facility_factor = 0.15
-				#production_factory_start_efficiency_factor = -0.10	#can start production at 0 efficiency, nerf stat above further if needed
-				conscription_factor = 0.15 #from 0.10, 0.15
-				weekly_manpower = 200 #Silly, but better for small nations who need the raw MP
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_dockyard = 0.1
+				industrial_capacity_factory = 0.1
+				army_core_attack_factor = -0.1
+				army_core_defence_factor = -0.1
+				research_speed_factor = 0.1
+				conscription_factor = 0.15
+				monthly_population = -0.1
+				stability_factor = -0.1
+				war_support_factor = 0.1
+				weekly_manpower = 200
 				hidden_modifier = { #Needs to hide for non DLC plebs
 					female_random_operative_chance = 0.5
 					female_random_scientist_chance = 0.5
